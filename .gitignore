@@ -3,6 +3,7 @@ node_modules/
 jspm_packages/
 database
 strapi/*
+!strapi/admin
 !strapi/api
 !strapi/components
 !strapi/entrypoint.sh
