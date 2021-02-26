@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "trio_kumu",
+  "info": {
+    "name": "TrioKumu",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "TrioKumu_et": {
+      "type": "component",
+      "repeatable": false,
+      "component": "article.trio-kumu"
+    },
+    "TrioKumu_en": {
+      "type": "component",
+      "repeatable": false,
+      "component": "article.trio-kumu"
+    },
+    "TrioKumu_ru": {
+      "type": "component",
+      "repeatable": false,
+      "component": "article.trio-kumu"
+    }
+  }
+}

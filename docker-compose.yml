@@ -1,17 +1,19 @@
 version: '3.7'
 services:
   strapi:
-    image: strapi/strapi
+    volumes:
+      - ./strapi:/srv/app
+      - ./.ssh:/root/.ssh
+    image: siimsutt/strapitst
     container_name: strapi
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
-      DATABASE_NAME: ${POSTGRES_DB}
+      DATABASE_NAME: ${DATABASE_NAME}
       DATABASE_HOST: ${DATABASE_HOST}
       DATABASE_PORT: ${DATABASE_PORT}
-      DATABASE_USERNAME: ${POSTGRES_USER}
-      DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
-    volumes:
-      - ./strapi:/srv/app
-      - ./ssh:/root/.ssh
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
     ports:
       - '1337:1337' #mapping between host port to container port local:container
+    command: strapi start
+    entrypoint: /srv/app/entrypoint.sh
